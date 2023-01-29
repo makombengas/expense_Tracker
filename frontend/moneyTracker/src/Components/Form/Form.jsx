@@ -1,11 +1,18 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import List from "../List/List";
+import { default as api } from "../.././Store/ApiSlice";
+import "./form.css";
 
 const Form = () => {
   const { register, handleSubmit, resetField } = useForm();
-  const onSubmit = (data) => {
-    console.log(data);
+  const [addTransaction] = api.useAddTransactionMutation();
+  const onSubmit = async (data) => {
+    if (!data) {
+    }
+    await addTransaction(data).unwrap();
+    resetField("name");
+    resetField("amount");
   };
   return (
     <div className="form max-w-sm mx-auto w-96">
@@ -16,11 +23,14 @@ const Form = () => {
             <input
               type="text"
               {...register("name")}
-              placeholder="Salary, House Rend, SIP"
+              placeholder="Salary, House Rent, SIP"
               className="form-input"
             />
           </div>
-          <select className="form-input" {...register("type")}>
+          <select
+            className="form-input group/item bg-emerald-600 text-neutral-50"
+            {...register("type")}
+          >
             <option value="Investment" default>
               Investment
             </option>
@@ -40,7 +50,7 @@ const Form = () => {
             />
           </div>
           <div className="submit-btn">
-            <button className="border py-2 text-white bg-indigo-500 w-full">
+            <button className="border py-2 text-white bg-emerald-600 w-full">
               Make a transaction
             </button>
           </div>

@@ -1,0 +1,19 @@
+.form-input {
+  position: relative;
+  @apply mt-1 block w-full py-2 px-3 border border-gray-200 bg-white rounded-md focus:outline-none
+  focus:ring-indigo-500 sm:text-sm;
+}
+select {
+  background-color: #08976b;
+  cursor: pointer;
+}
+option:hover {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  color: white;
+  background-color: #000000;
+}

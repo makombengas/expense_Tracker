@@ -1,29 +1,24 @@
 import React from "react";
-const obj = [
-  {
-    type: "Saving",
-    color: "#f9c74f",
-    percent: 45,
-  },
-  {
-    type: "Investment",
-    color: "#f9c74f",
-    percent: 20,
-  },
-  {
-    type: "Expense",
-    color: "rgb(54, 162, 235)",
-    percent: 10,
-  },
-];
+import { default as api } from "../.././Store/ApiSlice";
+import { getLabels } from "../../Helpers/Helper";
 const Labels = () => {
-  return (
-    <>
-      {obj.map((v, i) => (
-        <LabelComponent key={i} data={v} />
-      ))}
-    </>
-  );
+  const { data, isFetching, isSuccess, isError } = api.useGetLabelsQuery();
+  console.log("data labels", data);
+  let Transactions;
+
+  if (isFetching) {
+    Transactions = <div>Fetching</div>;
+  } else if (isSuccess) {
+    // getLabels(data, "type");
+    // console.log(getLabels(data, "type"));
+    // get the percentage of the Transactions
+    Transactions = getLabels(data, "type").map((v, i) => (
+      <LabelComponent key={i} data={v} />
+    ));
+  } else if (isError) {
+    Transactions = <div>Error fetching Transaction </div>;
+  }
+  return <>{Transactions}</>;
 };
 const LabelComponent = ({ data }) => {
   if (!data) {
@@ -38,7 +33,7 @@ const LabelComponent = ({ data }) => {
         ></div>
         <h3 className="text-md">{data.type ?? ""}</h3>
       </div>
-      <h3 className="font-bold">{data.percent}%</h3>
+      <h3 className="font-bold">{Math.round(data.percent) ?? 0}%</h3>
     </div>
   );
 };
