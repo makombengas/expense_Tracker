@@ -16,14 +16,14 @@ const Form = () => {
   };
   return (
     <div className="form max-w-sm mx-auto w-96">
-      <h1 className="font-bold pb-4 text-xl">Transaction</h1>
+      <h1 className="font-bold pb-4 text-xl">Transaktion</h1>
       <form id="form" onSubmit={handleSubmit(onSubmit)}>
         <div className="grid gap-4">
           <div className="input-group">
             <input
               type="text"
               {...register("name")}
-              placeholder="Salary, House Rent, SIP"
+              placeholder="Gehalt, Hausmiete, Usw..."
               className="form-input"
             />
           </div>
@@ -32,26 +32,26 @@ const Form = () => {
             {...register("type")}
           >
             <option value="Investment" default>
-              Investment
+              Investition
             </option>
             <option value="Expense" default>
-              Expense
+              Ausgabe
             </option>
             <option value="Savings" default>
-              Savings
+              Ersparnisse
             </option>
           </select>
           <div className="input-group">
             <input
               type="text"
-              placeholder="Amount"
+              placeholder="Betrag"
               {...register("amount")}
               className="form-input"
             />
           </div>
           <div className="submit-btn">
             <button className="border py-2 text-white bg-emerald-600 w-full">
-              Make a transaction
+              Machen Sie eine Transaktion
             </button>
           </div>
         </div>

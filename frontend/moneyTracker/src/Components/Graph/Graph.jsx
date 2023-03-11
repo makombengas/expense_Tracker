@@ -34,7 +34,7 @@ const Graph = () => {
         <div className="chart relative">
           <Doughnut {...chartData(data)} />
           <h3 className="mb-4 font-bold title " style={chartStyle}>
-            Total
+            Gesamt
             <span className="block text-3xl text-emerald-400">
               €{getTotal(data) ?? 0}
             </span>

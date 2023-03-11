@@ -1,0 +1,96 @@
+.icon-bar {
+  position: fixed;
+  top: 50%;
+
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 8;
+}
+
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+}
+.messageIcon {
+  background-color: #43aa8b;
+  padding: 1rem;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.icon-bar a:hover {
+  background-color: #43aa8b;
+  border-right: 0.5rem solid black;
+  transition: border-right 0.5s ease-in;
+}
+
+.facebook {
+  background: #3b5998;
+  color: white;
+}
+
+.twitter {
+  background: #55acee;
+  color: white;
+}
+.active {
+  background-color: #43aa8b;
+  color: white;
+}
+.twitter > .icon {
+  font-size: 3rem;
+}
+
+.github {
+  font-size: 2rem;
+  background: black;
+  color: white;
+}
+.github > .icon {
+  font-size: 3rem;
+}
+
+.linkedin {
+  background: #007bb5;
+  color: white;
+}
+.linkedin > .icon {
+  font-size: 3rem;
+}
+
+.youtube {
+  background: #bb0000;
+  color: white;
+}
+.youtube > .icon {
+  font-size: 3rem;
+}
+
+.content {
+  margin-left: 75px;
+  font-size: 30px;
+}
+
+@media (max-width: 701px) {
+  .icon-bar {
+    display: none;
+  }
+  .messageIcon {
+    background-color: #43aa8b;
+    padding: 1rem;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    display: block;
+  }
+}

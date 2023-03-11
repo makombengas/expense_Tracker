@@ -40,7 +40,7 @@ const List = () => {
 
   return (
     <div className="flex flex-col py-6 gap-3">
-      <h1 className="py-4 text-md font-bold text-xl">History</h1>
+      <h1 className="py-4 text-md font-bold text-xl">Handlung</h1>
       {Transactions}
     </div>
   );

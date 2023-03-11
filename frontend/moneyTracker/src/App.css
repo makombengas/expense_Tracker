@@ -1,10 +1,11 @@
 .App {
-  display: flex 1;
+  display: flex;
   /* justify-content: center;
   align-items: center;
   flex-direction: column; */
-  padding-top: 5rem;
+  padding-top: 0rem;
 }
+
 :root {
   --color-yellow: #f9c74f;
   --color-purple: #577590;
@@ -27,8 +28,8 @@
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 50%;
-  height: 50%;
+  width: 90%;
+  height: 90%;
   z-index: 1;
   background-color: "white";
 }
@@ -39,35 +40,41 @@
 
   flex-direction: column;
 }
+.css-ol7wxs-MuiTypography-root {
+  margin: 0;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.66;
+  letter-spacing: 0.03333em;
+  color: black;
+}
+.modalBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5rem;
+}
+
+.modalLogin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modalLogin p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2rem;
+  font-size: 1.2rem;
+}
 
 @media (max-width: 701px) {
-  .container {
-    width: 99%;
-  }
   .grid {
-    width: 98%;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-  .modalRegister {
-    padding-top: 0rem;
-    padding-left: 0rem;
-  }
-
-  canvas {
-    padding-right: 1rem;
-    padding-top: 1rem;
-  }
-  .item.flex {
-    width: 92%;
-    justify-content: center;
     align-items: center;
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
-  .text-4xl {
-    display: flex;
     justify-content: center;
-    align-items: center;
+  }
+  .modal-title h4 {
+    text-align: center;
   }
 }

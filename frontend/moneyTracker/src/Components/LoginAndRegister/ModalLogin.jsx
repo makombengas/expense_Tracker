@@ -30,58 +30,74 @@ function ModalLogin() {
     gap: "2rem",
     padding: "2rem",
     position: "absolute",
-    top: "45%",
+    top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: "80%",
+    width: "85%",
     height: "85%",
     zIndex: 1,
     backgroundColor: "white",
   };
   return (
     <div style={divStyle}>
-      <Modal.Dialog animate="true" style={modalStyle} className="modalStyle">
-        <Modal.Header closeButton>
-          <Modal.Title>
-            EXPENSE TRACKER
-            <p style={{ fontSize: "0.9rem", color: "darkGray" }}>
-              Just keep your money save !
-            </p>
-          </Modal.Title>
-        </Modal.Header>
+      <div className="modalContainer">
+        <Modal.Dialog animate="true" style={modalStyle} className="modalStyle">
+          <Modal.Header closeButton>
+            <div className="modalHeader">
+              <Modal.Title>
+                EXPENSE TRACKER
+                <p
+                  style={{
+                    fontSize: "0.85rem",
+                    color: "darkGray",
+                    paddingTop: "0.5rem",
+                    paddingBottom: "2rem",
+                    textAlign: "center",
+                  }}
+                >
+                  Just keep your money save
+                </p>
+              </Modal.Title>
+            </div>
+          </Modal.Header>
 
-        {/* Login components */}
-        <Modal.Body className="modalRegister">
-          <h2 style={{ paddingBottom: "5rem", fontSize: "2.2rem" }}>Login</h2>
-          <p style={{ paddingBottom: "2rem", fontSize: "1.2rem" }}>
-            Login and keep your money save!
-          </p>
-          <div>
-            <Login />
+          {/* Login components */}
+          <Modal.Body className="modalRegister">
+            <h2 style={{ paddingBottom: "5rem", fontSize: "2.2rem" }}>Login</h2>
+            <div className="modalLogin">
+              <p>Login and keep your money save!</p>
+            </div>
+            <div>
+              <Login />
+            </div>
+          </Modal.Body>
+          {/* Footer */}
+          <div className="modalFooter">
+            <Modal.Footer
+              style={{
+                gap: "1rem",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <p>You don't have an account?</p>
+
+              <div className="btnModal">
+                <Button
+                  style={{
+                    backgroundColor: "black",
+                    border: "none",
+                    marginLeft: "2rem",
+                  }}
+                  onClick={clickModal}
+                >
+                  Register
+                </Button>
+              </div>
+            </Modal.Footer>
           </div>
-          <Button
-            style={{
-              backgroundColor: "#43AA8B",
-              border: "none",
-              marginTop: "5rem",
-              padding: "0.5rem 2rem ",
-            }}
-          >
-            Login
-          </Button>
-        </Modal.Body>
-        {/* Footer */}
-        <Modal.Footer style={{ gap: "1rem", paddingRight: "4rem" }}>
-          <p>You don't have an account?</p>
-
-          <Button
-            style={{ backgroundColor: "black", border: "none" }}
-            onClick={clickModal}
-          >
-            Register
-          </Button>
-        </Modal.Footer>
-      </Modal.Dialog>
+        </Modal.Dialog>
+      </div>
     </div>
   );
 }

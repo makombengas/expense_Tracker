@@ -6,6 +6,7 @@ import categoryRoute from "./Routes/categoryRoute.js";
 import transactionRoute from "./Routes/transactionRoute.js";
 import userRoute from "./Routes/userRouter.js";
 import labelRoute from "./Routes/labelRoute.js";
+import cookiesParser from "cookie-parser";
 dotenv.config();
 mongoose.set("strictQuery", true);
 mongoose
@@ -18,7 +19,13 @@ mongoose
   });
 const app = express();
 /* use middleware */
-app.use(cors({ origin: "*" }));
+app.use(cookiesParser());
+app.use(
+  cors({
+    origin: process.env.BASE_URL,
+    credentials: true,
+  })
+);
 /* use middleware in json format */
 app.use(express.json());
 /* using Routes */

@@ -7,6 +7,13 @@ const app = express.Router();
 
 app.post("/register", ...validations.register, controller.createUser);
 app.post("/login", ...validations.login, controller.loginUser);
-app.get("/", auth, controller.getUser);
+app.get(
+  "/",
+
+  auth,
+  controller.getUser
+);
+app.get("/logout", auth, controller.logoutUser);
+app.post("/message", controller.sendMessage);
 
 export default app;
